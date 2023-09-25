@@ -1,0 +1,25 @@
+<head>
+</head>
+
+<body>
+
+  <p>You can ask about Jaehoon</p>
+  <label for="review">Question</label><br>
+  <input type="text" id="review" name="review" size="50"><br>
+  <button onclick="myFunction(document.getElementById('review').value)">Show Answer</button>
+  <p id="deal"></p>
+
+  <script>
+    function myFunction(question) {
+      fetch(`/api/gpt?review=${question}`).then(function (response) {
+        return response.json();
+      }).then(function (data) {
+        document.getElementById("deal").innerHTML = data;
+        console.log(data);
+      }).catch(function (err) {
+        console.log('Fetch Error :-S', err);
+      });
+    }
+
+  </script>
+</body>
