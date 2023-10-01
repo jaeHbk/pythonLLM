@@ -10,7 +10,7 @@ from fastapi import FastAPI
 from starlette.responses import FileResponse
 from serv.ai import generate_review
 
-loader = WebBaseLoader("https://www.ukc.ksea.org/plenary-keynotes/plenary/")
+loader = WebBaseLoader("https://sites.google.com/view/jaehunb")
 documents = loader.load()
 text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
 texts = text_splitter.split_documents(documents)
